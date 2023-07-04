@@ -6,7 +6,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <>
       <div className="flex">
         <Sidebar />
-        <main>{children}</main>
+        <main className="w-4/5">{children}</main>
       </div>
     </>
   )

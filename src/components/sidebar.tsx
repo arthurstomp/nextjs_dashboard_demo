@@ -29,7 +29,7 @@ export default function Example() {
   };
  
   return (
-    <div className="static w-[22rem]">
+    <div className="static w-1/5 min-w-[22rem]">
       <Card className="fixed top-4 left-4 h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
         <div className="mb-2 p-4">
           <Typography variant="h5" color="blue-gray">
