@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, PropsWithoutRef } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +11,7 @@ import {
 import { Bar } from 'react-chartjs-2';
 import useSWR from 'swr'
 import { fetcher } from '@/utils/world_bank_client'
+import { Props } from 'next/script';
 
 ChartJS.register(
   CategoryScale,
@@ -34,7 +35,7 @@ export const options = {
   },
 };
 
-export default function VerticalBarChart() {
+export default function VerticalBarChart({className: wrapperClassName}: PropsWithoutRef<any>): JSX.Element {
   const [labels, setLabels] = useState<string[]>([])
   const [chinaDataset, setChinaDataset] = useState<number[]>([])
   const [indiaDataset, setIndiaDataset] = useState<number[]>([])
@@ -74,6 +75,10 @@ export default function VerticalBarChart() {
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div className={wrapperClassName}>
+      <Bar options={options} data={data} />;
+    </div>
+  )
 }
 

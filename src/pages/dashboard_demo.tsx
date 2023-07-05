@@ -30,8 +30,8 @@ export default function DashboardDemo() {
 
         </div>
         <hr className="my-2 border-blue-gray-50" />
-        <div className="max-w-[100%]">
-          <VerticalBarChart />
+        <div className="max-w-[100%] flex justify-between flex-wrap">
+          <VerticalBarChart className="w-1/2"/>
         </div>
       </div>
     </>
