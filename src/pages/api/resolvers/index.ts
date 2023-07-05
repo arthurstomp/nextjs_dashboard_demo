@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import * as path from 'path';
 
 const chinaIndicatorsFilePath = path.join(process.cwd(), 'src/assets/graphql/world_bank_indicators/world_bank_indicators_chn.json')
-const indiaIndicatorsFilePath = path.join(process.cwd(), 'src/assets/graphql/world_bank_indicators/world_bank_indicators_chn.json')
+const indiaIndicatorsFilePath = path.join(process.cwd(), 'src/assets/graphql/world_bank_indicators/world_bank_indicators_ind.json')
 
 export const resolvers = {
   Query: {
@@ -17,7 +17,7 @@ export const resolvers = {
           choosenFilePath = indiaIndicatorsFilePath
         }
 
-        const file = await fs.readFile(indiaIndicatorsFilePath, { encoding: 'utf-8'})
+        const file = await fs.readFile(choosenFilePath, { encoding: 'utf-8'})
         if (file) {
           const indicatorsJson = JSON.parse(file)
           const data = indicatorsJson.data
