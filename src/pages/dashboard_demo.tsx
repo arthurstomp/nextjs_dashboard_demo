@@ -1,6 +1,6 @@
-import {
-  Typography,
-} from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react"
+import HeaderStat from "@/components/header_stat"
+
 export default function DashboardDemo() {
   return(
     <>
@@ -9,9 +9,25 @@ export default function DashboardDemo() {
           <Typography variant="h1" color="blue-gray">
             Dashboard Demo
           </Typography>
-          <img className="inline-block h-10 w-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt=""></img>
         </div>
         <hr className="my-2 border-blue-gray-50" />
+        <div>
+          <div className="w-100 flex justify-around">
+            <div className="w-1/5 h-30">
+              <HeaderStat title="Test #1" value="100" unity="%"/>
+            </div>
+            <div className="w-1/5 h-30">
+              <HeaderStat title="Test #1" value="100" unity="%"/>
+            </div>
+            <div className="w-1/5 h-30">
+              <HeaderStat title="Test #1" value="100" unity="%"/>
+            </div>
+            <div className="w-1/5 h-30">
+              <HeaderStat title="Test #1" value="100" unity="%"/>
+            </div>
+          </div>
+
+        </div>
       </div>
     </>
   )
