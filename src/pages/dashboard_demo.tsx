@@ -1,5 +1,6 @@
 import { Typography } from "@material-tailwind/react"
 import HeaderStat from "@/components/header_stat"
+import VerticalBarChart from "@/components/vertical_bar_chart"
 
 export default function DashboardDemo() {
   return(
@@ -27,6 +28,10 @@ export default function DashboardDemo() {
             </div>
           </div>
 
+        </div>
+        <hr className="my-2 border-blue-gray-50" />
+        <div className="max-w-[80%]">
+          <VerticalBarChart />
         </div>
       </div>
     </>
