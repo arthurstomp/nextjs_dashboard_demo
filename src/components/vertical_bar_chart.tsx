@@ -29,7 +29,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Vertical Bar Chart example',
+      text: 'Crop production index (2014-2016 = 100)',
     },
   },
 };
