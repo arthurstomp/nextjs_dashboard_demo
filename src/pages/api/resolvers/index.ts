@@ -11,7 +11,6 @@ export const resolvers = {
         let choosenFilePath
 
         if (args.country_iso_code === 'CHN') {
-          console.log('China country code')
           choosenFilePath = chinaIndicatorsFilePath
         } else {
           choosenFilePath = indiaIndicatorsFilePath

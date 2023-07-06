@@ -77,7 +77,7 @@ export default function VerticalBarChart({className: wrapperClassName}: PropsWit
 
   return (
     <div className={wrapperClassName}>
-      <Bar options={options} data={data} />;
+      <Bar options={options} data={data} />
     </div>
   )
 }
