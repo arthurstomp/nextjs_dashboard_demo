@@ -1,6 +1,8 @@
 import { Typography } from "@material-tailwind/react"
 import HeaderStat from "@/components/header_stat"
 import VerticalBarChart from "@/components/vertical_bar_chart"
+import RandomHorizontalBarChart from '@/components/random_horizontal_bar_chart'
+import RandomPieChart from '@/components/random_pie_chart'
 
 function LoremText() {
   return(
@@ -18,7 +20,7 @@ function LoremText() {
 export default function DashboardDemo() {
   return(
     <>
-      <div className="pt-2 w-full px-10" style={{ height: '130vh' }}>
+      <div className="pt-2 w-full px-10">
         <div className="flex justify-between">
           <Typography variant="h1" color="blue-gray">
             Dashboard Demo
@@ -43,16 +45,19 @@ export default function DashboardDemo() {
 
         </div>
         <hr className="my-2 border-blue-gray-50" />
-        <section className="max-w-[100%] my-10 flex justify-between flex-wrap">
-          <VerticalBarChart className="w-1/2"/>
-          <div className="w-1/2">
-            <LoremText />
+        <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
+          <VerticalBarChart className="w-2/5"/>
+          <div className="w-2/5">
+            <div className="max-h-[300px] w-fit mx-auto">
+             <RandomPieChart />
+            </div>
           </div>
         </section>
-        <section className="max-w-[100%] my-10 flex justify-between flex-wrap">
-          <div className="w-1/2">
+        <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
+          <div className="w-2/5">
             <LoremText />
           </div>
+          <RandomHorizontalBarChart className="w-2/5" />
         </section>
       </div>
     </>

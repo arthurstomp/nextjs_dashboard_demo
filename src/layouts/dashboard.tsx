@@ -7,7 +7,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <>
       <div className="flex h-full">
         <Sidebar />
-        <main className="w-4/5 w-full">
+        <main className="w-full">
           {children}
           <Footer></Footer>
         </main>

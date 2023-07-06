@@ -11,7 +11,6 @@ import {
 import { Bar } from 'react-chartjs-2';
 import useSWR from 'swr'
 import { fetcher } from '@/utils/world_bank_client'
-import { Props } from 'next/script';
 
 ChartJS.register(
   CategoryScale,
