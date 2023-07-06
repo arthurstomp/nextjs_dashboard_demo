@@ -1,8 +1,10 @@
+import { createContext, useState } from 'react'
 import { Typography } from "@material-tailwind/react"
 import HeaderStat from "@/components/header_stat"
 import VerticalBarChart from "@/components/vertical_bar_chart"
 import RandomHorizontalBarChart from '@/components/random_horizontal_bar_chart'
 import RandomPieChart from '@/components/random_pie_chart'
+import { Select, Option } from "@material-tailwind/react";
 
 function LoremText() {
   return(
@@ -17,49 +19,98 @@ function LoremText() {
   )
 }
 
+const FIRST_YEAR = 1961
+const LAST_YEAR = 2021
+
+const yearOptions = (): JSX.Element[] => {
+  let buf: JSX.Element[] = []
+  for (let i = LAST_YEAR; i >= FIRST_YEAR; i--) {
+    buf.push(<Option value={i.toString()}>{i}</Option>)
+  }
+
+  return buf
+}
+
+export type YearRangeContextValue = {
+  startingYear: number,
+  endingYear: number,
+}
+
+export const YearRangeContext = createContext<YearRangeContextValue>({
+  startingYear: 2016,
+  endingYear: 2021
+})
+
 export default function DashboardDemo() {
+  const [startingYear, setStartingYear] = useState<number>(2016)
+  const [endingYear, setEndingYear] = useState<number>(2021)
   return(
     <>
-      <div className="pt-2 w-full px-10">
-        <div className="flex justify-between">
-          <Typography variant="h1" color="blue-gray">
-            Dashboard Demo
-          </Typography>
-        </div>
-        <hr className="my-2 border-blue-gray-50" />
-        <div>
-          <div className="w-100 flex justify-around">
-            <div className="w-1/5 h-30">
-              <HeaderStat title="Test #1" value="100" unity="%"/>
+      <YearRangeContext.Provider value={{ startingYear, endingYear }}>
+        <div className="pt-2 w-full px-10">
+          <div className="flex justify-between">
+            <div>
+              <Typography variant="h1" color="blue-gray">
+                Dashboard Demo
+              </Typography>
             </div>
-            <div className="w-1/5 h-30">
-              <HeaderStat title="Test #1" value="100" unity="%"/>
-            </div>
-            <div className="w-1/5 h-30">
-              <HeaderStat title="Test #1" value="100" unity="%"/>
-            </div>
-            <div className="w-1/5 h-30">
-              <HeaderStat title="Test #1" value="100" unity="%"/>
+            <div className="flex pt-[10px] justify-between min-w-[500px]">
+              <div>
+                <Select
+                  variant="standard"
+                  label="Starting Year"
+                  value={startingYear.toString()}
+                  onChange={(newValue) => setStartingYear(parseInt(newValue || '0'))}>
+                  {yearOptions()}
+                </Select>
+              </div>
+              <div>
+                <Select
+                  variant="standard"
+                  label="Ending Year"
+                  value={endingYear.toString()}
+                  onChange={(newValue) => setEndingYear(parseInt(newValue || '0'))}>
+                  {yearOptions()}
+                </Select>
+              </div>
             </div>
           </div>
+          <hr className="my-2 border-blue-gray-50" />
+          <div>
+            <div className="w-100 flex justify-around">
+              <div className="w-1/5 h-30">
+                <HeaderStat title="Test #1" value="100" unity="%"/>
+              </div>
+              <div className="w-1/5 h-30">
+                <HeaderStat title="Test #1" value="100" unity="%"/>
+              </div>
+              <div className="w-1/5 h-30">
+                <HeaderStat title="Test #1" value="100" unity="%"/>
+              </div>
+              <div className="w-1/5 h-30">
+                <HeaderStat title="Test #1" value="100" unity="%"/>
+              </div>
+            </div>
 
-        </div>
-        <hr className="my-2 border-blue-gray-50" />
-        <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
-          <VerticalBarChart className="w-2/5"/>
-          <div className="w-2/5">
-            <div className="max-h-[300px] w-fit mx-auto">
-             <RandomPieChart />
+          </div>
+          <hr className="my-2 border-blue-gray-50" />
+          <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
+            <VerticalBarChart className="w-2/5"/>
+            <div className="w-2/5">
+              <div className="max-h-[300px] w-fit mx-auto">
+                <RandomPieChart />
+              </div>
             </div>
-          </div>
-        </section>
-        <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
-          <div className="w-2/5">
-            <LoremText />
-          </div>
-          <RandomHorizontalBarChart className="w-2/5" />
-        </section>
-      </div>
+          </section>
+          <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
+            <div className="w-2/5">
+              <LoremText />
+            </div>
+            <RandomHorizontalBarChart className="w-2/5" />
+          </section>
+        </div>
+
+      </YearRangeContext.Provider>
     </>
   )
 }

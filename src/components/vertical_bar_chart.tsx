@@ -1,4 +1,4 @@
-import React, { useState, useEffect, PropsWithoutRef } from 'react';
+import React, { useState, useEffect, PropsWithoutRef, useContext } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -21,6 +21,8 @@ ChartJS.register(
   Legend
 );
 
+import { YearRangeContext } from '@/pages/dashboard_demo'
+
 export const options = {
   responsive: true,
   plugins: {
@@ -38,8 +40,9 @@ export default function VerticalBarChart({className: wrapperClassName}: PropsWit
   const [labels, setLabels] = useState<string[]>([])
   const [chinaDataset, setChinaDataset] = useState<number[]>([])
   const [indiaDataset, setIndiaDataset] = useState<number[]>([])
-  const { data: dataChn , error: errorChn } = useSWR(['CHN', "AG.PRD.CROP.XD"], fetcher)
-  const { data: dataInd , error: errorInd } = useSWR(['IND', "AG.PRD.CROP.XD"], fetcher)
+  const { startingYear, endingYear } = useContext(YearRangeContext)
+  const { data: dataChn , error: errorChn } = useSWR(['CHN', "AG.PRD.CROP.XD", startingYear, endingYear], fetcher)
+  const { data: dataInd , error: errorInd } = useSWR(['IND', "AG.PRD.CROP.XD", startingYear, endingYear], fetcher)
 
   useEffect(() => {
     setLabels(dataChn?.labels || [])
