@@ -75,9 +75,9 @@ export default function DashboardDemo() {
               </div>
             </div>
           </div>
-          <hr className="my-2 border-blue-gray-50" />
+          <hr className="hidden my-2 border-blue-gray-50" />
           <div>
-            <div className="w-100 flex justify-around">
+            <div className="hidden w-100 flex justify-around">
               <div className="w-1/5 h-30">
                 <HeaderStat title="Test #1" value="100" unity="%"/>
               </div>
