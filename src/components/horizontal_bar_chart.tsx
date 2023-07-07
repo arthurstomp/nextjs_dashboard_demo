@@ -10,7 +10,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
 import { fetcher } from '@/utils/world_bank_client'
 import { YearRangeContext } from '@/pages/dashboard_demo'
 

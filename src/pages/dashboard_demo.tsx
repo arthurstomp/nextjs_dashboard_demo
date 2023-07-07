@@ -3,7 +3,7 @@ import { Typography } from "@material-tailwind/react"
 import HeaderStat from "@/components/header_stat"
 import VerticalBarChart from "@/components/vertical_bar_chart"
 import HorizontalBarChart from '@/components/horizontal_bar_chart'
-import RandomPieChart from '@/components/random_pie_chart'
+import RandomAreaChart from '@/components/random_area_chart'
 import { Select, Option } from "@material-tailwind/react";
 
 function LoremText() {
@@ -97,9 +97,7 @@ export default function DashboardDemo() {
           <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
             <VerticalBarChart className="w-2/5"/>
             <div className="w-2/5">
-              <div className="max-h-[300px] w-fit mx-auto">
-                <RandomPieChart />
-              </div>
+              <RandomAreaChart />
             </div>
           </section>
           <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
