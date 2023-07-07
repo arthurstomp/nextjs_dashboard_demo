@@ -36,8 +36,10 @@ function resultToProtoDataset(result: any[]) {
     data: []
   }
   result.forEach((res: any) => {
-    buf.labels.push(res.year)
-    buf.data.push(res.value)
+    if (!buf.labels.includes(res.year)) {
+      buf.labels.push(res.year)
+      buf.data.push(res.value)
+    }
   })
 
   return buf

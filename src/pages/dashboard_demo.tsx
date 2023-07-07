@@ -2,7 +2,7 @@ import { createContext, useState } from 'react'
 import { Typography } from "@material-tailwind/react"
 import HeaderStat from "@/components/header_stat"
 import VerticalBarChart from "@/components/vertical_bar_chart"
-import RandomHorizontalBarChart from '@/components/random_horizontal_bar_chart'
+import HorizontalBarChart from '@/components/horizontal_bar_chart'
 import RandomPieChart from '@/components/random_pie_chart'
 import { Select, Option } from "@material-tailwind/react";
 
@@ -106,7 +106,7 @@ export default function DashboardDemo() {
             <div className="w-2/5">
               <LoremText />
             </div>
-            <RandomHorizontalBarChart className="w-2/5" />
+            <HorizontalBarChart className="w-2/5" />
           </section>
         </div>
 
