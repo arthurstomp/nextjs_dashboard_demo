@@ -7,7 +7,7 @@ export type HeaderStatProps = {
 }
 export default function HeaderStat({ title, value, unity }: HeaderStatProps) {
   return(
-    <Card className="w-full h-full min-w-[10rem] bg-red-50 p-5">
+    <Card className="w-full h-full min-w-[10rem] bg-blue-gray-50 p-5">
       <Typography variant='h4'>
         {title}
       </Typography>
