@@ -22,10 +22,10 @@ function LoremText() {
 const FIRST_YEAR = 1961
 const LAST_YEAR = 2021
 
-const yearOptions = (): JSX.Element[] => {
+const yearOptions = (keyPrefix: string): JSX.Element[] => {
   let buf: JSX.Element[] = []
   for (let i = LAST_YEAR; i >= FIRST_YEAR; i--) {
-    buf.push(<Option value={i.toString()}>{i}</Option>)
+    buf.push(<Option key={`${keyPrefix}-option-${i}`} value={i.toString()}>{i}</Option>)
   }
 
   return buf
@@ -61,7 +61,7 @@ export default function DashboardDemo() {
                   label="Starting Year"
                   value={startingYear.toString()}
                   onChange={(newValue) => setStartingYear(parseInt(newValue || '0'))}>
-                  {yearOptions()}
+                  {yearOptions('starting-year')}
                 </Select>
               </div>
               <div>
@@ -70,7 +70,7 @@ export default function DashboardDemo() {
                   label="Ending Year"
                   value={endingYear.toString()}
                   onChange={(newValue) => setEndingYear(parseInt(newValue || '0'))}>
-                  {yearOptions()}
+                  {yearOptions('ending-year')}
                 </Select>
               </div>
             </div>

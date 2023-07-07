@@ -12,6 +12,6 @@ type WorldBankDSLine {
 }
 
 type Query {
-  getWorldBankIndicators(country_iso_code: String!, indicator_code: String!, year: String): [WorldBankDSLine]
+  getWorldBankIndicators(country_iso_code: String!, indicator_code: String!, starting_year: String, ending_year: String): [WorldBankDSLine]
 }
 `

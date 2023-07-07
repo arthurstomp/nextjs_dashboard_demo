@@ -21,7 +21,16 @@ export const resolvers = {
           const indicatorsJson = JSON.parse(file)
           const data = indicatorsJson.data
           const filteredData = data.filter((d: any) => {
-            return d.IndicatorCode === args.indicator_code
+            let passFilter = d.IndicatorCode === args.indicator_code
+            if (args.starting_year) {
+              passFilter = (passFilter && d.Year >= args.starting_year)
+            }
+
+            if (args.ending_year) {
+              passFilter = (passFilter && d.Year <= args.ending_year)
+            }
+
+            return passFilter
           })
 
           return filteredData.map((d: any) => ({
