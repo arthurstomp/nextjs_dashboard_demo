@@ -84,7 +84,7 @@ export default function HorizontalBarChart({className: wrapperClassName}: PropsW
   };
   return (
     <div className={wrapperClassName}>
-      <Bar options={options} data={data} />;
+      <Bar options={options} data={data} />
     </div>
   )
 }

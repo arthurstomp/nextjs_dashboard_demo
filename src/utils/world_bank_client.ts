@@ -46,8 +46,6 @@ function resultToProtoDataset(result: any[]) {
 }
 
 export const fetcher = async ([countryCode, indicatorCode, startingYear, endingYear]: string[]) => {
-  console.log('startingYear', startingYear)
-  console.log('endingYear', endingYear)
   let res = await request('/api/graphql', buildQuery(countryCode, indicatorCode, startingYear, endingYear))
   res = (res as any)[countryCode]
   res = (res as any[]).sort(compareYear)

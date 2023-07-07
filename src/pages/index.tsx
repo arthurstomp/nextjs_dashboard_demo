@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Material Tailwind + Next.js + TS</title>
       </Head>
-      <div className="relative grid min-h-[100vh] w-screen p-8">
+      <div className="relative grid min-h-[100vh] w-full p-8">
         <div className="flex flex-col-reverse items-center justify-between gap-4 self-start md:flex-row">
           <Card className="h-max w-max border border-blue-gray-50 py-4 px-5 shadow-lg shadow-blue-gray-900/5">
             <code className="text-blue-gray-900">
