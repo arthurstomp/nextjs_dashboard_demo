@@ -7,5 +7,8 @@ module.exports = {
   testPathIgnorePatterns: ["/node_modules/", "/__tests__/test-utils.tsx"],
   moduleNameMapper: {
     "@/(.*)": "<rootDir>/src/$1"
+  },
+  transform: {
+    "\\.tsx?$": ['ts-jest', {"tsconfig": '<rootDir>/tsconfig_jest.json'}]
   }
 };
