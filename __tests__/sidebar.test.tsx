@@ -34,6 +34,8 @@ describe("Sidebar", () => {
 
     expect(header).toHaveTextContent('Sidebar')
     expect(dashboardItem).toHaveTextContent('Dashboard')
-    expect(dashboardItem).toHaveClass('active')
+    const btn = dashboardItem.querySelector('[role="button"]')
+    expect(btn).not.toBeNull()
+    expect(btn?.className).toContain('active')
   })
 })
