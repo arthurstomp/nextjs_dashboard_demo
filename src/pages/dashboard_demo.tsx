@@ -49,7 +49,7 @@ export default function DashboardDemo() {
         <div className="pt-2 w-full px-10">
           <div className="flex justify-between">
             <div>
-              <Typography variant="h1" color="blue-gray">
+              <Typography variant="h1" color="blue-gray" data-testid="page-title">
                 Dashboard Demo
               </Typography>
             </div>
