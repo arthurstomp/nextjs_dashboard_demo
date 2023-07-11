@@ -1,9 +1,8 @@
 import React, { createContext, useState } from 'react'
 import { Typography } from "@material-tailwind/react"
-import HeaderStat from "@/components/header_stat"
 import VerticalBarChart from "@/components/vertical_bar_chart"
 import HorizontalBarChart from '@/components/horizontal_bar_chart'
-import RandomAreaChart from '@/components/random_area_chart'
+import AreaChart from '@/components/area_chart'
 import { Select, Option } from "@material-tailwind/react";
 
 function LoremText() {
@@ -76,28 +75,11 @@ export default function DashboardDemo() {
             </div>
           </div>
           <hr className="hidden my-2 border-blue-gray-50" />
-          <div>
-            <div className="hidden w-100 flex justify-around">
-              <div className="w-1/5 h-30">
-                <HeaderStat title="Test #1" value="100" unity="%"/>
-              </div>
-              <div className="w-1/5 h-30">
-                <HeaderStat title="Test #1" value="100" unity="%"/>
-              </div>
-              <div className="w-1/5 h-30">
-                <HeaderStat title="Test #1" value="100" unity="%"/>
-              </div>
-              <div className="w-1/5 h-30">
-                <HeaderStat title="Test #1" value="100" unity="%"/>
-              </div>
-            </div>
-
-          </div>
           <hr className="my-2 border-blue-gray-50" />
           <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
             <VerticalBarChart className="w-2/5"/>
             <div className="w-2/5">
-              <RandomAreaChart />
+              <AreaChart />
             </div>
           </section>
           <section className="max-w-[100%] my-10 flex justify-around flex-wrap">
