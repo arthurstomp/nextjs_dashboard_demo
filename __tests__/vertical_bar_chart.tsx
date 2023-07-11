@@ -36,7 +36,7 @@ describe("VerticalBarChart", () => {
     expect(baseElement).toMatchSnapshot()
   })
 
-  it('calls for world_bank_clinet', async () => {
+  it('calls for world_bank_client', async () => {
     const { findByTestId } = render(
       <SWRConfig value={{ dedupingInterval: 0, provider: () => new Map() }}>
         <VerticalBarChart ></VerticalBarChart>
