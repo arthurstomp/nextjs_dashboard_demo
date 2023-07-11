@@ -9,7 +9,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 ChartJS.register(
   CategoryScale,
@@ -51,6 +51,6 @@ export const data = {
   ],
 };
 
-export function App() {
+export default function App() {
   return <Bar options={options} data={data} />;
 }
