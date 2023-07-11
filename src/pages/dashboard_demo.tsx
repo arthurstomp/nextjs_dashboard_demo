@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
 import { Typography } from "@material-tailwind/react"
 import HeaderStat from "@/components/header_stat"
 import VerticalBarChart from "@/components/vertical_bar_chart"

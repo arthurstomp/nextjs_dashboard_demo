@@ -11,6 +11,7 @@ import {
 import { Bar } from 'react-chartjs-2';
 import useSWR from 'swr'
 import { fetcher } from '@/utils/world_bank_client'
+import * as ClientModule from '@/utils/world_bank_client'
 
 ChartJS.register(
   CategoryScale,
@@ -78,8 +79,8 @@ export default function VerticalBarChart({className: wrapperClassName}: PropsWit
   };
 
   return (
-    <div className={wrapperClassName}>
-      <Bar options={options} data={data} />
+    <div className={wrapperClassName} data-testid="chart">
+      <Bar options={options} data={data}/>
     </div>
   )
 }
